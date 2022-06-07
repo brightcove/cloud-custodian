@@ -12,6 +12,8 @@ Filters
 -------
 
 
+  - :ref:`client-certificate <aws.rest-stage.filters.client-certificate>`
+
   - :ref:`config-compliance <aws.common.filters.config-compliance>`
   
   - :ref:`event <aws.common.filters.event>`
@@ -30,6 +32,120 @@ Filters
   
   - :ref:`value <aws.common.filters.value>`
   
+  - :ref:`wafv2-enabled <aws.rest-stage.filters.wafv2-enabled>`
+
+
+
+.. _aws.rest-stage.filters.client-certificate:
+
+client-certificate
+++++++++++++++++++
+Filter API stages by a client certificate
+
+:example:
+
+.. code-block:: yaml
+
+        policies:
+          - name: rest-stages-old-certificate
+            resource: rest-stage
+            filters:
+              - type: client-certificate
+                key: createdDate
+                value_type: age
+                value: 90
+                op: greater-than
+
+.. container:: toggle
+
+  
+
+  .. raw:: html
+     
+    <div class="header docutils container" style=""></div>
+
+  .. code-block:: yaml
+
+    properties:
+      default:
+        type: object
+      key:
+        type: string
+      op:
+        enum:
+        - eq
+        - equal
+        - ne
+        - not-equal
+        - gt
+        - greater-than
+        - ge
+        - gte
+        - le
+        - lte
+        - lt
+        - less-than
+        - glob
+        - regex
+        - regex-case
+        - in
+        - ni
+        - not-in
+        - contains
+        - difference
+        - intersect
+      type:
+        enum:
+        - client-certificate
+      value:
+        oneOf:
+        - type: array
+        - type: string
+        - type: boolean
+        - type: number
+        - type: 'null'
+      value_from:
+        additionalProperties: 'False'
+        properties:
+          expr:
+            oneOf:
+            - type: integer
+            - type: string
+          format:
+            enum:
+            - csv
+            - json
+            - txt
+            - csv2dict
+          url:
+            type: string
+        required:
+        - url
+        type: object
+      value_regex:
+        type: string
+      value_type:
+        enum:
+        - age
+        - integer
+        - expiration
+        - normalize
+        - size
+        - cidr
+        - cidr_size
+        - swap
+        - resource_count
+        - expr
+        - unique_size
+        - date
+        - version
+    required:
+    - type
+
+
+
+
+Permissions - apigateway:GET
 
 
 .. _aws.rest-stage.filters.json-diff:
@@ -76,6 +192,40 @@ against a locked version (requires use of is-locked filter).
 Permissions - config:GetResourceConfigHistory
 
 
+.. _aws.rest-stage.filters.wafv2-enabled:
+
+wafv2-enabled
++++++++++++++
+Parent base class for filters and actions.
+    
+
+.. container:: toggle
+
+  
+
+  .. raw:: html
+     
+    <div class="header docutils container" style=""></div>
+
+  .. code-block:: yaml
+
+    properties:
+      state:
+        type: boolean
+      type:
+        enum:
+        - wafv2-enabled
+      web-acl:
+        type: string
+    required:
+    - type
+
+
+
+
+Permissions - wafv2:ListWebACLs
+
+
 
 
 Actions
@@ -104,6 +254,8 @@ Actions
   
   - :ref:`remove-tag <aws.common.actions.remove-tag>`
   
+  - :ref:`set-wafv2 <aws.rest-stage.actions.set-wafv2>`
+
   - :ref:`tag <aws.common.actions.tag>`
   
   - :ref:`update <aws.rest-stage.actions.update>`
@@ -152,6 +304,42 @@ Delete an api stage
 
 
 Permissions - apigateway:DELETE
+
+
+.. _aws.rest-stage.actions.set-wafv2:
+
+set-wafv2
++++++++++
+Enable/Disable wafv2 protection on applicable resource.
+
+    
+
+.. container:: toggle
+
+  
+
+  .. raw:: html
+     
+    <div class="header docutils container" style=""></div>
+
+  .. code-block:: yaml
+
+    properties:
+      state:
+        type: boolean
+      type:
+        enum:
+        - set-wafv2
+      web-acl:
+        type: string
+    required:
+    - web-acl
+    - type
+
+
+
+
+Permissions - wafv2:AssociateWebACL, wafv2:ListWebACLs
 
 
 .. _aws.rest-stage.actions.update:
