@@ -1,6 +1,7 @@
 # Copyright The Cloud Custodian Authors.
 # SPDX-License-Identifier: Apache-2.0
 ResourceMap = {
+    "azure.advisor-recommendation": "c7n_azure.resources.advisor.AdvisorRecommendation",
     "azure.aks": "c7n_azure.resources.k8s_service.KubernetesService",
     "azure.api-management": "c7n_azure.resources.apimanagement.ApiManagement",
     "azure.appserviceplan": "c7n_azure.resources.appserviceplan.AppServicePlan",
@@ -20,6 +21,9 @@ ResourceMap = {
     "azure.databricks": "c7n_azure.resources.databricks.Databricks",
     "azure.datafactory": "c7n_azure.resources.data_factory.DataFactory",
     "azure.datalake": "c7n_azure.resources.datalake_store.DataLakeStore",
+    "azure.defender-autoprovisioning": "c7n_azure.resources.defender.DefenderAutoProvisioningSetting",  # noqa
+    "azure.defender-pricing": "c7n_azure.resources.defender.DefenderPricing",
+    "azure.defender-setting": "c7n_azure.resources.defender.DefenderSetting",
     "azure.disk": "c7n_azure.resources.disk.Disk",
     "azure.dnszone": "c7n_azure.resources.dns_zone.DnsZone",
     "azure.eventhub": "c7n_azure.resources.event_hub.EventHub",
