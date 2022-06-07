@@ -48,7 +48,8 @@ Windows (CMD/PowerShell)
 To install Cloud Custodian run::
 
   python3 -m venv custodian
-  ./custodian/bin/activate
+  .\custodian\Scripts\Activate.ps1   # For Powershell users  
+  # .\custodian\Scripts\activate.bat # Or use this for CMD users
   pip install c7n    # This includes AWS support
 
 To install Cloud Custodian for Azure, you will also need to run::
@@ -250,14 +251,14 @@ Run:
 Now launch a new shell (or refresh your bash environment by sourcing the appropriate
 file).
 
-.. _community
+.. _community:
 
 Community Resources
 -------------------
 
 We have a regular community meeting that is open to all users and developers of
 every skill level. Joining the `mailing list
-https://groups.google.com/forum/#!forum/cloud-custodian`_ will automatically send
+<https://groups.google.com/forum/#!forum/cloud-custodian>`_ will automatically send
 you a meeting invite. See the notes below for more technical information on
 joining the meeting. 
 
