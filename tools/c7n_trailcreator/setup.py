@@ -10,33 +10,36 @@ package_data = \
 {'': ['*']}
 
 install_requires = \
-['argcomplete (>=1.12.3,<2.0.0)',
- 'attrs (>=21.2.0,<22.0.0)',
- 'boto3 (>=1.18.21,<2.0.0)',
- 'botocore (>=1.21.21,<2.0.0)',
- 'c7n (>=0.9.14,<0.10.0)',
- 'c7n-org (>=0.6.13,<0.7.0)',
- 'click (>=7.1.2,<8.0.0)',
- 'click>=7.0,<8.0',
- 'importlib-metadata (>=4.6.4,<5.0.0)',
- 'jmespath (>=0.10.0,<0.11.0)',
- 'jsonschema (>=3.2.0,<4.0.0)',
- 'pyrsistent (>=0.18.0,<0.19.0)',
+['argcomplete (>=2.0.0,<3.0.0)',
+ 'attrs (>=21.4.0,<22.0.0)',
+ 'boto3 (>=1.21.42,<2.0.0)',
+ 'botocore (>=1.24.42,<2.0.0)',
+ 'c7n (>=0.9.16,<0.10.0)',
+ 'c7n-org (>=0.6.15,<0.7.0)',
+ 'click (>=8.1.2,<9.0.0)',
+ 'click>=8.0,<9.0',
+ 'colorama (>=0.4.4,<0.5.0)',
+ 'docutils (>=0.17.1,<0.18.0)',
+ 'importlib-metadata (>=4.11.3,<5.0.0)',
+ 'importlib-resources (>=5.7.1,<6.0.0)',
+ 'jmespath (>=1.0.0,<2.0.0)',
+ 'jsonschema (>=4.4.0,<5.0.0)',
+ 'pyrsistent (>=0.18.1,<0.19.0)',
  'python-dateutil (>=2.8.2,<3.0.0)',
- 'pyyaml (>=5.4.1,<6.0.0)',
- 's3transfer (>=0.5.0,<0.6.0)',
+ 'pyyaml (>=6.0,<7.0)',
+ 's3transfer (>=0.5.2,<0.6.0)',
  'six (>=1.16.0,<2.0.0)',
  'tabulate (>=0.8.9,<0.9.0)',
- 'typing-extensions (>=3.10.0.0,<4.0.0.0)',
- 'urllib3 (>=1.26.6,<2.0.0)',
- 'zipp (>=3.5.0,<4.0.0)']
+ 'typing-extensions (>=4.2.0,<5.0.0)',
+ 'urllib3 (>=1.26.9,<2.0.0)',
+ 'zipp (>=3.8.0,<4.0.0)']
 
 entry_points = \
 {'console_scripts': ['c7n-trailcreator = c7n_trailcreator.trailcreator:cli']}
 
 setup_kwargs = {
     'name': 'c7n-trailcreator',
-    'version': '0.2.13',
+    'version': '0.2.15',
     'description': 'Cloud Custodian - Retroactive Tag Resource Creators from CloudTrail',
     'license': 'Apache-2.0',
     'classifiers': [
@@ -55,7 +58,7 @@ setup_kwargs = {
     'package_data': package_data,
     'install_requires': install_requires,
     'entry_points': entry_points,
-    'python_requires': '>=3.6,<4.0',
+    'python_requires': '>=3.7,<4.0',
 }
 
 
