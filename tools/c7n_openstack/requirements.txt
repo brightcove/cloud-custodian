@@ -1,5 +1,5 @@
 appdirs==1.4.4; python_version >= "3.6"
-certifi==2021.10.8; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.6.0" and python_version >= "3.6"
+certifi==2022.12.7; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.6.0" and python_version >= "3.6"
 cffi==1.15.0; python_version >= "3.6"
 charset-normalizer==2.0.12; python_full_version >= "3.6.0" and python_version >= "3.6"
 cryptography==36.0.2; python_version >= "3.6"
